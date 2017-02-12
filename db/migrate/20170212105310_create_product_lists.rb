@@ -4,7 +4,7 @@ class CreateProductLists < ActiveRecord::Migration[5.0]
             t.integer :order_id
             t.string :product_name
             t.integer :product_price
-            t.integer :quantityß
+            t.integer :quantity
             t.timestamps
         end
     end
