@@ -16,3 +16,168 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar-default {
+    background-color   : #F9FBE7; //背景颜色
+    border-color       : #E0E0E0; //边框色
+    margin-bottom      : 20px; //底部 margin 不撑开距离
+    border-bottom-width: 0;
+    border-radius      : 0;
+}
+
+.navbar-default .navbar-brand {
+    color      : #FAFAFA; //字体颜色
+    padding    : 10px 15px; //上下10px,左右15px
+    line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color           : #FFA726; //鼠标放置在链接上的文字颜色
+    background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+
+.navbar-brand > img {
+    display     : inline-block; //图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离
+    width       : 132px; //定制图片宽度
+    height      : 32px; //定制图片高度
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFA726;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+    color           : #FF6F00;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color           : #FF6F00;
+    background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: #FFE0B2;
+    color           : #FF6F00;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+.jumbotron1 {
+    display      : block;
+    background   : #CFD8DC;
+    // margin: 0 -15px -15px 0; //顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0; //圆角为0
+}
+
+#qz-footer {
+    height: 200px;
+    // box-sizing: border-box;
+    // position  : absolute;
+    bottom: 0;
+    width : 100%;
+}
+
+.footer-section {
+    display   : block;
+    width     : 100%;
+    height    : 200px;
+    background: #BCAAA4;
+    margin-top: 0;
+    // position  : absolute;
+    bottom    : 0;
+}
+
+.contact-line-block {
+    float  : right;
+    width  : 40%;
+    padding: 50px 0 0;
+}
+
+.des-block {
+    float  : right;
+    width  : 60%;
+    padding: 50px 0 0;
+}
+
+.column-block {
+    text-align: center;
+}
+
+.column-left {
+    width     : 33%;
+    float     : left;
+    text-align: center;
+}
+
+.column-center {
+    width     : 33%;
+    float     : left;
+    text-align: center;
+}
+
+.column-right {
+    width     : 33%;
+    float     : left;
+    text-align: center;
+}
+
+.footer-section .footer-content {
+    display     : block;
+    margin-left : auto;
+    margin-right: auto;
+    width       : 100%;
+    padding     : 0;
+    position    : relative;
+    color       : #333;
+}
+
+.img-block {
+    float: left;
+    width: 58px;
+}
+
+.introduce {
+    // width: 380px;
+    padding-bottom: 50px;
+    // padding-left: 50px;
+}
+
+.right-block {
+    // width: 380px;
+    color : #DEB887;
+    margin: 0 20px;
+}
+
+.introduce-block {
+    color     : #666;
+    text-align: left;
+    margin    : 0;
+    float     : left;
+    padding   : 10px 0 0 8px;
+    width     : 328px;
+}
+
+.fline {
+    padding-top  : 30px;
+    width        : 100%;
+    height       : 1px;
+    border-bottom: 1px solid rgba(151,151,151,0.6);
+    clear        : both;
+}
+
+.footer-content .copyright-block {
+    width  : 100%;
+    padding: 0;
+    display: block;
+    float  : bottom;
+}
