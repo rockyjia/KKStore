@@ -149,6 +149,10 @@
   opacity: 1;
 }
 
+.carousel {
+    position: relative;
+    margin-top: -20px;
+}
 /********************************/
 /*          Hero Headers        */
 /********************************/
@@ -200,7 +204,7 @@
     height: 100%;
     z-index: 2;
     background-color: #080d15;
-    opacity: .7;
+    opacity: .6;
 }
 
 /********************************/
@@ -225,18 +229,22 @@
 .fade-carousel .slides .slide-3 {
   height: 100vh;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://ww1.sinaimg.cn/large/006tNc79ly1fcqejr8okmj30zk0qnjyg.jpg );
+  background-image: url(https://ooo.0o0.ooo/2017/02/16/58a48e11d8532.jpg);
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url(https://ww1.sinaimg.cn/large/006tNc79ly1fcqejwpj1ij31kw17dhdt.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/02/16/58a4915cc7836.png);
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url(https://ww4.sinaimg.cn/large/006tNc79ly1fcqek8xh7yj31kw11xx6s.jpg);
+  background-image: url(https://ooo.0o0.ooo/2017/02/16/58a48e202199e.jpg);
 }
+
+
+
+
 
 /********************************/
 /*          Media Queries       */
@@ -252,7 +260,7 @@
 
 //紫色条
 .banner-des {
-    width: 1200px;
+    width: 100%;
     height: 69px;
     background: #fff;
     border-top: 1px solid #eeeeee;
@@ -263,7 +271,7 @@
 .banner-des li {
     float: left;
     list-style:none;
-    width: 300px;
+    width: 25%;
     height: 69px;
     text-align: center;
     line-height: 69px;
