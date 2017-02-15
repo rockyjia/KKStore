@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JDstore 后台</title>
+        <title>GiftFinder 后台</title>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <%= render "common/navbar" %>
-            <div class="row">
+            <div class="container">
                 <div class="col-md-2">
                     <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
                         <li> <%= link_to("Products", admin_products_path) %> </li>
