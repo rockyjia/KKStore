@@ -9,7 +9,20 @@
             <ul class="nav navbar-nav">
               <li><%= link_to("首页", "/")%></li>
               <li><%= link_to("发现", products_path)%></li>
-              <li><%= link_to("分类", "/products") %></li>
+              <!-- <li><%= link_to("分类", "/products") %></li> -->
+              <ul class="nav navbar-nav navbar-left">
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">分类<span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                 <% Category.all.each do |category| %>
+                 <li>
+                   <%= link_to category.name, products_path(category: category.name), class: "link" %>
+                 </li>
+                 <% end %>
+               </ul>
+             </li>
+         </ul>
+
               <li><%= link_to("推荐", "/") %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
