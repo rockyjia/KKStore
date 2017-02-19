@@ -2,15 +2,22 @@ Rails.application.routes.draw do
     root 'welcome#index'
 
     devise_for :users
+
     namespace :admin do
-        resources :categories
-        resources :products
+      resources :products
+      resources :categories
     end
+
+    namespace :account do
+        resources :orders
+    end
+
     resources :products do
         member do
             post :add_to_cart
         end
     end
+
     resources :carts do
         collection do
             delete :clean
@@ -19,10 +26,6 @@ Rails.application.routes.draw do
     end
 
     resources :orders
-
     resources :cart_items
 
-    namespace :account do
-        resources :orders
-    end
 end
