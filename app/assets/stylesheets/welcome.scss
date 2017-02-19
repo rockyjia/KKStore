@@ -130,10 +130,12 @@
 // q-welome分支
 
 
-.fade-carousel {
+.fade-carousel { //阴影
     position: relative;
     height: 100vh;
+    opacity: 0.6;
 }
+
 .fade-carousel .carousel-inner .item {
     height: 100vh;
 }
@@ -233,7 +235,7 @@
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url(https://ooo.0o0.ooo/2017/02/16/58a48e11d8532.jpg);
+  background-image: url(https://ww1.sinaimg.cn/large/006tNc79ly1fcqejr8okmj30zk0qnjyg.jpg );
 }
 .fade-carousel .slides .slide-2 {
   background-image: url(https://ooo.0o0.ooo/2017/02/16/58a4915cc7836.png);

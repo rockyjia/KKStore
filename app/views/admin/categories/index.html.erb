@@ -1,0 +1,22 @@
+<br>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    <th>category name</th>
+    <th>Option</th>
+    <tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+    <td> <%= category.name %></td>
+    <td>
+    <%= link_to("Edit", edit_admin_category_path(category)) %> |
+    <%= link_to("Destroy", admin_category_path(category), method: :delete, data: { :confirm => "Are you sure?"}) %>
+  </td>
+  </tr>
+    <% end %>
+  </tbody>
+</table>
