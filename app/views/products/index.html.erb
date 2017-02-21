@@ -1,11 +1,4 @@
-<%= form_tag products_path, :method => "get" do %>
-    <div class="searchform">
-        <%= text_field_tag :search, params[:search], placeholder: "搜索礼物关键字", class: "searchbox"%>
-        <span>
-            <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbutton" %>
-        </span>
-    </div>
-<% end %>
+<%= render "products/search_bar" %>
 
 <div class="row">
     <% @products.each do |product| %>

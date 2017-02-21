@@ -1,0 +1,29 @@
+<div class="index-main bg-gray">
+    <div class="productList-wrap pt30 bc">
+        <% if @products.present? %>
+            <ul class="productList clearfix pl10 pr10 pb20">
+                <% @products.each do |product| %>
+                    <p class="productList-item-pic w200 h200">
+                        <%= link_to product_path(product) do %>
+                            <% if product.image.present? %>
+                                <%= image_tag(product.image.thumb.url) %>
+                            <% else %>
+                                <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                            <% end %>
+                        <% end %>
+                    </p>
+                    <p class="productList-item-price fb col-red f18 mt10">￥<%= product.price %></p>
+                    <p class="productList-item-name ell">
+                        <%= link_to product_path(product) do %>
+                            <%= product.title %>
+                        <% end %>
+                    </p>
+                    <p class="productList-item-desc mt5 f12"><%= product.description %></p>
+                </li>
+            <% end %>
+        </ul>
+    <% else %>
+        <p class="tc mt100">亲，没有搜索到商品哦，要不换个关键词试试？</p>
+    <% end %>
+</div>
+</div>
