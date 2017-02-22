@@ -43,6 +43,6 @@ class ProductsController < ApplicationController
     end
 
     def search_criteria(query_string)
-        { title_or_description_name_cont: query_string }
+        { title_or_description_cont: query_string }
     end
 end
