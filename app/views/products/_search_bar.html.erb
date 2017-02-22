@@ -1,0 +1,8 @@
+<div class=searchform>
+    <%= form_tag search_products_path , :method => :get do %>
+        <input type=“text” class=“searchbox” name=query_string value="<%= params[:query_string] %>" placeholder=搜索礼物关键字>
+        <span>
+            <%= submit_tag "搜索", :title => nil, :description => nil, class: "searchbutton" %>
+        </span>
+    </div>
+<% end %>

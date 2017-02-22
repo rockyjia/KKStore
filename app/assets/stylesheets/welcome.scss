@@ -74,44 +74,6 @@
     margin-top: 10px;
 }
 
-.jobs-search-form {
-    margin-top   : 20px;
-    margin-bottom: 15px;
-    align-self   : center;
-}
-
-.searchform {
-    position  : relative;
-    height    : 100%;
-    width     : 540px;
-    min-height: 100px;
-    margin    : 80px auto 0;
-    text-align: left;
-}
-
-.searchbox {
-    float  : left;
-    width  : 421px;
-    height : 38px;
-    padding: 9px 7px;
-    font   : 16px arial;
-    border : 1px solid #b8b8b8;
-}
-
-.searchbutton {
-    float           : auto;
-    background-color: #E65100;
-    color           : #fff;
-    font-weight     : bold;
-    cursor          : pointer;
-    width           : 86px;
-    height          : 38px;
-    border          : 1px solid #eea236;
-    // border-color: #eea236;
-    font-size       : 14px;
-    font-family     : simsun;
-}
-
 #image {
     position        : relative;
     background-image: url("https://ww1.sinaimg.cn/large/006tKfTcly1fcqb9awoxwj30i009ojte.jpg");
@@ -125,9 +87,8 @@
 .deviseposition {
     margin-top: opx;
 }
-
-
 // q-welome分支
+
 
 body {
   padding-top: 20px;
@@ -137,9 +98,11 @@ body {
 
 #myCarousel .nav a small {
     display:block;
+
 }
 #myCarousel .nav {
 	background:#eee;
+
 
 }
 #myCarousel .nav a {
@@ -147,37 +110,58 @@ body {
 }
 
 
+
 //紫色条
+
 .banner-des {
+
+
   display: block;
     max-width: 100%;
     height: 69px;
+
     background: #fff;
     border-top: 1px solid #eeeeee;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    overflow: hidden;
+    overflow  : hidden;
 }
 
 .banner-des li {
-    float: left;
-    list-style:none;
-    width: 25%;
-    height: 69px;
-    text-align: center;
+    float      : left;
+    list-style : none;
+    width      : 25%;
+    height     : 69px;
+    text-align : center;
     line-height: 69px;
-    font-size: 18px !important;
-    color: #523669;
+    font-size  : 18px !important;
+    color      : #523669;
 }
 
-ul{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+ul {
+    margin    : 0;
+    padding   : 0;
+    border    : 0;
     list-style: none;
-    display: block;
-    font-size: 12px;
-
+    display   : block;
+    font-size : 12px;
 }
+/*产品展示*/
+.cuadro_intro_hover {
+    padding : 0;
+    position: relative;
+    overflow: hidden;
+    height  : 200px;
+}
+
+.cuadro_intro_hover:hover .caption {
+    opacity          : 1;
+    transform        : translateY(-150px);
+    -webkit-transform: translateY(-150px);
+    -moz-transform   : translateY(-150px);
+    -ms-transform    : translateY(-150px);
+    // -o-transform:translateY(-150px);
+}
+
 
 /*产品展示*/
 .cuadro_intro_hover{
@@ -236,3 +220,4 @@ ul{
 //     text-align: center;
 //     font-size: 0;
 // }
+
