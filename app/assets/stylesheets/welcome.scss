@@ -123,45 +123,34 @@
 }
 
 .deviseposition {
-    margin-top: 20px;
+    margin-top: opx;
 }
 
 
 // q-welome分支
 
-body { padding-top: 20px; }
+body {
+  padding-top: 20px;
+
+}
+
+
 #myCarousel .nav a small {
     display:block;
 }
 #myCarousel .nav {
 	background:#eee;
+
 }
 #myCarousel .nav a {
     border-radius:0px;
 }
 
-#img
-{
-    max-width:1200px;
-width: expression(this.width > 1200? "1200px" : true);
-height: 400px;
-/*     max-width: 1200px;  */
-/*height: auto;  */
- /*width: 100%;*/
- /*   height: 100%;*/
-
-    /*transform:scale(2);//设置缩放比例*/
-    /*        -ms-transform:scale(2);*/
-    /*        -webkit-transform:scale(2);*/
-    /*        -o-transform:scale(2);*/
-    /*        -moz-transform:scale(2);*/
-}
-
-
 
 //紫色条
 .banner-des {
-    width: 100%;
+  display: block;
+    max-width: 100%;
     height: 69px;
     background: #fff;
     border-top: 1px solid #eeeeee;

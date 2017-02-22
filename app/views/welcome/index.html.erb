@@ -6,41 +6,37 @@
 
         <div class="item active">
 
-          <img src=https://ooo.0o0.ooo/2017/02/17/58a6bbf162b1e.jpg>
+          <img src="https://ww1.sinaimg.cn/large/006tNc79ly1fcxdr8ravnj31jk111tth.jpg">
 
            <div class="carousel-caption">
             <h3>Unique Gift for You</h3>
-            <!-- <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p> -->
           </div>
         </div><!-- End Item -->
 
          <div class="item">
 
-          <img src=https://ooo.0o0.ooo/2017/02/17/58a6bbf12d3cf.jpg>
+          <img  src="https://ww1.sinaimg.cn/large/006tNc79ly1fcxdr92qlfj31jk111k98.jpg">
 
            <div class="carousel-caption">
             <h3>Unique Gift for Your family</h3>
-            <!-- <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p> -->
           </div>
         </div><!-- End Item -->
 
         <div class="item">
 
-          <img src=https://ww3.sinaimg.cn/large/006tNc79ly1fcqejyv013j31kw0zw1ky.jpg>
+          <img src="https://ww3.sinaimg.cn/large/006tNc79ly1fcyitlg7g4j31jk110k8o.jpg">
 
            <div class="carousel-caption">
             <h3></h3>
-            <!-- <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a href="http://sevenx.de/demo/bootstrap-carousel/" target="_blank" class="label label-danger">Bootstrap 3 - Carousel Collection</a></p> -->
           </div>
         </div><!-- End Item -->
 
         <div class="item">
 
-          <img src="https://ww4.sinaimg.cn/large/006tNc79ly1fcsjrho8foj31kw11yqvc.jpg">
+          <img   src="https://ww3.sinaimg.cn/large/006tNc79ly1fcxdranzznj31jk112kez.jpg">
 
            <div class="carousel-caption">
             <h3>Unique Gift for Your friends</h3>
-            <!-- <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p> -->
           </div>
         </div><!-- End Item -->
 
@@ -51,7 +47,7 @@
           <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Unique Gift for You<small></small></a></li>
           <li data-target="#myCarousel" data-slide-to="1"><a href="#">独一无二的礼物<small></small></a></li>
           <li data-target="#myCarousel" data-slide-to="2"><a href="#">好玩的礼物<small></small></a></li>
-          <li data-target="#myCarousel" data-slide-to="3"><a href="#">精致的礼物<small>选你所需</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="3"><a href="#">精致的礼物<small></small></a></li>
         </ul>
 
 
@@ -93,7 +89,13 @@
           <div class="caption-text">
             <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;"><%= product.title%></h3>
             <p><%= product.description%></p>
-          <a class=" btn btn-default" data-method="post" href="javascript:;"><span class="glyphicon glyphicon-plus">加入购物车</span></a>
+            <% if product.quantity.present? && product.quantity > 0 %>
+                   <%#= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-4x"), add_to_cart_product_path(product), :method => :post) %>
+                   <%= link_to("加入购物车",add_to_cart_product_path(product), :method => :post, :class => "btn btn-default") %>
+
+                 <% else %>
+                   已售馨
+                 <% end %>
           </div>
         </div>
       </div>
