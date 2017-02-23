@@ -20,15 +20,15 @@
 .navbar {
     border-radius: 0; //圆角为0
     position     : relative;
-    min-height   : 50px;
-    margin-bottom: 20px;
+    min-height   : 30px;
+    margin-bottom: 0;
     border       : 0 solid transparent;
 }
 
 .navbar-default {
     background-color   : #F9FBE7; //背景颜色
     border-color       : #E0E0E0; //边框色
-    margin-bottom      : 20px; //底部 margin 不撑开距离
+    margin-bottom      : 0; //底部 margin 不撑开距离
     border-bottom-width: 0;
     border-radius      : 0;
 }
@@ -243,3 +243,33 @@
     font-size       : 14px;
     font-family     : simsun;
 }
+
+.container-fluid {
+    margin-right : auto;
+    margin-left  : auto;
+    padding-left : 0;
+    padding-right: 0;
+}
+
+html {
+    height: 100%;
+}
+//
+
+body {
+    min-height: 100%;
+    margin    : 0;
+    padding   : 0;
+    position  : relative;
+}
+//
+// main {
+//     padding-bottom: 200px;
+// }
+// /* main的padding-bottom值要等于或大于footer的height值 */
+// footer {
+//     position: absolute;
+//     bottom  : 0;
+//     width   : 100%;
+//     height  : 100px;
+// }
