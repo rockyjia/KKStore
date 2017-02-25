@@ -1,7 +1,7 @@
 <h2> Product List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
-  <%= link_to("Add new category", new_admin_category_path,class: "btn btn-primary btn-sm") %>
-   <%= link_to("Category 清单", admin_categories_path, class: "btn btn-primary btn-sm") %>
+    <%= link_to("Add new category", new_admin_category_path,class: "btn btn-primary btn-sm") %>
+    <%= link_to("Category 清单", admin_categories_path, class: "btn btn-primary btn-sm") %>
     <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
 <table class="table table-bordered">
@@ -23,8 +23,8 @@
                 </td>
                 <td>
                     <%= link_to product_path(product) do %>
-                    <% if product.photos.present? %>
-                          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+                        <% if product.photos.present? %>
+                            <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
                         <% else %>
                             <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
@@ -37,7 +37,7 @@
                     <%= product.price %>
                 </td>
                 <td>
-                  <%= product.category.name %>
+                    <%= product.category.name %>
                 </td>
                 <td>
                     <%= link_to("Edit", edit_admin_product_path(product)) %>
