@@ -35,3 +35,17 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+            <div class="col-sm-12 ">
+                <h4>
+                  <%= @product.reviews.count %> Reviews
+                </h4>
+                <hr>
+                <div >
+                  <%= render @product.reviews%>
+
+                  <%= render "reviews/form"%>
+                </div>
+              </div>
+            </div>
