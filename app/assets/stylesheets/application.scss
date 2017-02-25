@@ -17,6 +17,13 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.container-fluid {
+    margin-right : auto;
+    margin-left  : auto;
+    padding-left : 0;
+    padding-right: 0;
+}
+
 .navbar {
     border-radius: 0; //圆角为0
     position     : relative;
@@ -117,8 +124,8 @@
 .footer-section {
     display   : block;
     width     : 100%;
-    // height    : 200px;
-    background: rgba(255, 152, 0, 0.46);
+    height    : 200px;
+    background: rgba(222, 222, 188, 0.46);
     margin-top: 0;
     // position  : absolute;
     bottom    : 0;
@@ -246,13 +253,6 @@
     font-family     : simsun;
 }
 
-.container-fluid {
-    margin-right : auto;
-    margin-left  : auto;
-    padding-left : 0;
-    padding-right: 0;
-}
-
 html {
     height: 100%;
 }
@@ -263,6 +263,18 @@ body {
     margin    : 0;
     padding   : 0;
     position  : relative;
+}
+
+#myCarousel .nav a small {
+    display: block;
+}
+
+#myCarousel .nav {
+    background: #eee;
+}
+
+#myCarousel .nav a {
+    border-radius: 0;
 }
 //
 // main {

@@ -3,40 +3,40 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="https://ww1.sinaimg.cn/large/006tNc79ly1fcxdr8ravnj31jk111tth.jpg">
+                <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fd2urdju75j30xc0dw0w3.jpg">
                 <div class="carousel-caption">
-                    <h3>Unique Gift for You</h3>
+                    <h3>Intimate Gift for You</h3>
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img  src="https://ww1.sinaimg.cn/large/006tNc79ly1fcxdr92qlfj31jk111k98.jpg">
+                <img  src="https://ww3.sinaimg.cn/large/006tKfTcly1fd2uvg5fl1j30xc0dwdn5.jpg">
                 <div class="carousel-caption">
-                    <h3>Lovely Gift for Your Parents</h3>
+                    <h3>Delicate Gift for Your Parents</h3>
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img src="https://ww3.sinaimg.cn/large/006tNc79ly1fcyitlg7g4j31jk110k8o.jpg">
+                <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd2uu4cr9ej30xc0dw7fe.jpg">
                 <div class="carousel-caption">
-                    <h3>Funny Gift for Your Kids</h3>
+                    <h3>Interesting Gift for Your Kids</h3>
                 </div>
             </div>
             <!-- End Item -->
             <div class="item">
-                <img  src="https://ww2.sinaimg.cn/large/006tKfTcly1fd0svv0q6xj31jk110wiq.jpg">
+                <img  src="https://ww2.sinaimg.cn/large/006tKfTcly1fd2uvcd91gj30xc0dwn0n.jpg">
                 <div class="carousel-caption">
-                    <h3>Beautiful Gift for Your Friends</h3>
+                    <h3>Unique Gift for Your Friends</h3>
                 </div>
             </div>
             <!-- End Item -->
         </div>
         <!-- End Carousel Inner -->
         <ul class="nav nav-pills nav-justified">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">贴心的<small></small></a></li>
-            <li data-target="#myCarousel" data-slide-to="1"><a href="#">精致的<small></small></a></li>
-            <li data-target="#myCarousel" data-slide-to="2"><a href="#">好玩的<small></small></a></li>
-            <li data-target="#myCarousel" data-slide-to="3"><a href="#">独一无二的<small></small></a></li>
+            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">贴心的<small>Intimate and Sweet</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="1"><a href="#">精致的<small>Delicate and Exquisite</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="2"><a href="#">好玩的<small>Interesting and Amused</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="3"><a href="#">独一无二的<small>Unique and Particular</small></a></li>
         </ul>
     </div>
     <!-- End Carousel -->
@@ -51,8 +51,7 @@
     </ul>
 </div>
 <div class="module-name decorative">
-
-        <i></i><span>精选商品</span><i></i>
+    <i></i><span>精选商品</span><i></i>
 </div>
 <% Product.all.last(12).each do |product| %>
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
@@ -61,17 +60,17 @@
             <p style="text-align:center; margin-top:0px;">
                 <!-- <img src="https://ooo.0o0.ooo/2017/02/15/58a416a2a6d94.jpg" class="img-responsive" alt=""> -->
                 <%= link_to product_path(product) do  %>
-                <% if product.photos.present? %>
-                    <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumb") %>
-                <% else %>
-                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumb") %>
-                <% end %>
+                    <% if product.photos.present? %>
+                        <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumb") %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumb") %>
+                    <% end %>
                 <% end %>
             </p>
             <div class="caption">
                 <div class="blur"></div>
                 <div class="caption-text">
-                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;"><%= link_to("product.title", product_path(product), class: "see btn",  :method => :get ) %></h3>
+                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;"><%= link_to(product.title, product_path(product), class: "see btn",  :method => :get ) %></h3>
                     <p><%= product.description%></p>
                     <% if product.quantity.present? && product.quantity > 0 %>
                         <%#= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-4x"), add_to_cart_product_path(product), :method => :post) %>
