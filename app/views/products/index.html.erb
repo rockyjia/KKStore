@@ -3,49 +3,21 @@
 
 
 
-<!-- <div class="order clearfix mt30 w1200 bc">
-    <p class="fl title pl20 pr20">商品排序：</p>
-    <ul class="fl orderList">
-      <ul class="banner-des text-center">
-
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if !params[:order] %>"><%= link_to("新品", products_path) %></li>
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_quantity' %>"><%= link_to("销量", products_path(:order => "by_product_quantity")) %></li>
-      <li class="fl orderList-orderItem pl20 pr20 <%= 'orderList-activeItem' if params[:order] == 'by_product_price' %>"><%= link_to("价格", products_path(:order => "by_product_price")) %></li>
-
-    </ul>
-  </div> -->
-
-
-
-
-
-  <div class="dropdown clearfix pull-left">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      商品排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-            <%= link_to("新品", products_path) %>
-        </li>
-        <li>
-            <%= link_to("销量", products_path(:order => "by_product_quantity")) %>
-
-        </li>
-        <li>
-            <%= link_to("价格", products_path(:order => "by_product_price")) %>
-        </li>
+<div class="order-wrap">
+      <ul class="order-list">
+         <p class="list1" >商品排序：</p>
+      <li  class="order-listItem"><a href="/products">新品</a></li>
+      <li  class="order-listItem"><a href="/products?order=by_product_quantity">销量</a></li>
+      <li  class="order-listItem"><a href="/products?order=by_product_price">价格</a></li>
     </ul>
 </div>
 
+
+</br>
 <div class="row">
-
-
     <% @products.each do |product| %>
-
         <div class="col-xs-6 col-md-3">
             <%= link_to product_path(product) do %>
-            <!-- <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg"> -->
                 <% if product.photos.present? %>
                     <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
                 <% else %>
@@ -58,24 +30,3 @@
     <% end %>
 
 </div>
-
-
-
-
-<!--  Modal content for the above example -->
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">关闭</button>
-          <h4 class="modal-title" id="myLargeModalLabel">产品大图</h4>
-        </div>
-        <div class="modal-body">
-        <!-- <img src="http://placehold.it/200x200&text=No Pic" class="img-responsive img-rounded center-block" alt=""> -->
-        <img src="product.photos[0].avatar" class="img-responsive img-rounded center-block" alt="">
-
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->

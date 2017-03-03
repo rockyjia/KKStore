@@ -52,3 +52,37 @@ margin-right: -10px;
 
 
 //排序
+.order-wrap {
+  width: 100%; /*铺满屏幕*/
+  font-size: 30px; 
+  height: 40px; /*设置高度*/
+  line-height: 40px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
+  color: #717171; /*字体颜色*/
+}
+
+.order-list {
+  float: left;
+  font-size: 18px;
+}
+
+.order-listItem {
+  float: left; /*li是block元素，我们知道block元素是会独占一行的，如果要让它们在一行，那就要加上float*/
+  font-size: 18px;
+  padding-left: 30px; /*左边加点空间*/
+  padding-right: 30px; /*右边加点空间*/
+}
+
+.list1 {
+    float: left;
+    padding-left: 30px;
+    display: inline;
+}
+
+.order-wrap a:hover {
+  color: #C81623; /*鼠标一上去的时候，字体变成红色*/
+}
+
+.order-wrap a {
+  color: #717171; /*文字的颜色*/
+  text-decoration: none; /*不要下划线*/
+}

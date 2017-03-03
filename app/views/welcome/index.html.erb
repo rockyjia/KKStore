@@ -48,15 +48,18 @@
         <li><img src="https://ooo.0o0.ooo/2017/02/15/58a3c34eb223b.png" alt="" />全品类包邮</li>
     </ul>
 </div>
+
+
 <div class="module-name decorative">
     <i></i><span>精选商品</span><i></i>
 </div>
+
+
 <% Product.all.last(12).each do |product| %>
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <div  class="col-xs-6 col-sm-3">
         <div class="cuadro_intro_hover " style="background-color:#cccccc;">
             <p style="text-align:center; margin-top:0px;">
-                <!-- <img src="https://ooo.0o0.ooo/2017/02/15/58a416a2a6d94.jpg" class="img-responsive" alt=""> -->
                 <%= link_to product_path(product) do  %>
                     <% if product.photos.present? %>
                         <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumb") %>
@@ -65,6 +68,7 @@
                     <% end %>
                 <% end %>
             </p>
+
             <div class="caption">
                 <div class="blur"></div>
                 <div class="caption-text">
@@ -80,5 +84,5 @@
             </div>
         </div>
     </div>
-    <!-- </div> -->
+
 <% end %>
