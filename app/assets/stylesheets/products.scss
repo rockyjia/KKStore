@@ -54,7 +54,7 @@ margin-right: -10px;
 //排序
 .order-wrap {
   width: 100%; /*铺满屏幕*/
-  font-size: 30px; 
+  font-size: 30px;
   height: 40px; /*设置高度*/
   line-height: 40px; /*设置行高，实现垂直居中，口诀「如果高度等于行高，那就实现了文本的垂直居中」*/
   color: #717171; /*字体颜色*/
@@ -85,4 +85,56 @@ margin-right: -10px;
 .order-wrap a {
   color: #717171; /*文字的颜色*/
   text-decoration: none; /*不要下划线*/
+}
+
+//产品图片向上浮动
+.products-box {
+  width: 200px;
+  padding: 15px;
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+  top: 0;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.products-box img {
+  width: 200px;
+}
+
+.products-box:hover {
+  top: -5px; /*在400ms内，top的值从 0px 变化为 5px*/
+}
+
+
+//产品详情页首张图片放大
+.product-box1 {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+}
+
+.product-box1 img {
+  width: 400px;
+  transition: all 0.4s; /*这句代码的意思是，当这个元素的某个属性发现变化时，不是立刻完成，而是慢慢地在400ms内完成，这样就实现了动画的效果*/
+  -webkit-transition: all 0.4s;
+  -webkit-transition:all 0.4s ease-in-out; /*让「谷歌浏览器」支持这个属性*/
+  -moz-transition:all 0.4s ease-in-out; /*让「火狐浏览器」支持这个属性*/
+  -o-transition:all 0.4s ease-in-out; /*让「safari」支持属性*/
+  -ms-transition:all 0.4s ease-in-out; /*让「IE浏览器」支持这个属性*/
+}
+
+.product-box1:hover img {
+  transform: scale(1.2); /*在400ms内，图片的尺寸从 1倍 放大到 1.2倍*/
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
 }

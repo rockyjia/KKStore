@@ -15,8 +15,10 @@
 
 </br>
 <div class="row">
+
     <% @products.each do |product| %>
         <div class="col-xs-6 col-md-3">
+            <div class="products-box">
             <%= link_to product_path(product) do %>
                 <% if product.photos.present? %>
                     <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
@@ -26,6 +28,7 @@
             <% end %>
             <%= product.title %> ￥ <%= product.price %>
             <h6>分类:<%= product.category.name %></h6>
+           </div>
         </div>
     <% end %>
 
