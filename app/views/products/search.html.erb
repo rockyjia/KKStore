@@ -3,26 +3,23 @@
     <% if @products.present? %>
         <% @products.each do |product| %>
             <div class="col-xs-6 col-md-3">
-                <ul>
+
                     <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                            <%= image_tag(product.image.thumb.url) %>
+                        <% if product.photos.present? %>
+                            <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
                         <% else %>
-                            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
                         <% end %>
                     <% end %>
-                </p>
-                <p class="">￥<%= product.price %></p>
-                <p class="">
-                    <%= link_to product_path(product) do %>
-                        <%= product.title %>
+                  <p><%= link_to product_path(product) do %>
+                     <%= product.title %>
                     <% end %>
-                </p>
-                <p><%= product.description %></p>
-            </ul>
-        <% end %>
-    <% else %>
-        <p class="">亲，没有搜索到商品哦，要不换个关键词试试？</p>
-    <% end %>
-</div>
+                  ￥<%= product.price %></p>
+               <p>描述：<%= product.description %></p>
+               <h6>分类：<%= product.category.name %></h6>
+           </div>
+      <% end %>
+   <% else %>
+       <p class="search-empty">亲，没有搜索到商品哦，要不换个关键词试试？</p>
+   <% end %>
 </div>

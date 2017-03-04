@@ -2,8 +2,10 @@
   <div class="col-md-6">
      <!-- multi-pics -->
      <% if @photos.present? %>
+
        <% @photos.each_with_index do |p, index| %>
          <% if index == 0 %>
+          <!-- <div class="product-box1"> -->
            <%= image_tag p.avatar.medium.url %>
            <div style="letter-spacing: -8px">
          <% else %>
@@ -11,6 +13,7 @@
          <% end %>
        <% end %>
        </div>
+       <!-- </div> -->
      <% else %>
          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
      <% end %>
@@ -42,10 +45,9 @@
                   <%= @product.reviews.count %> Reviews
                 </h4>
                 <hr>
-                <div >
-                  <%= render @product.reviews%>
-
-                  <%= render "reviews/form"%>
-                </div>
+              <div >
+                <%= render @product.reviews%>
+                <%= render "reviews/form"%>
               </div>
             </div>
+</div>
