@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="/"><img src='<%= image_url 'logo1.png' %>' >GiftFinder</a>
+          <a class="navbar-brand" href="/home"><img src='<%= image_url 'logo1.png' %>' >GiftFinder</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><%= link_to("首页", "/")%></li>
+              <li><%= link_to("首页", "/home")%></li>
               <li><%= link_to("发现", products_path)%></li>
               <ul class="nav navbar-nav navbar-left">
            <li class="dropdown">
@@ -22,7 +22,7 @@
              </li>
          </ul>
 
-              <li><%= link_to("推荐", "/") %></li>
+              <li><%= link_to("推荐", "/home") %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
