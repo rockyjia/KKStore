@@ -252,8 +252,10 @@ body{
 
 footer{
   width: 100%; /*铺满屏幕*/
-  position: absolute;
+  // position: absolute;
+  position: relative;
   bottom: 0;
+  top:auto;
   height: 100px;
 }
 
