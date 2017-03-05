@@ -1,53 +1,341 @@
-<div class="row">
-  <div class="col-md-6">
-     <!-- multi-pics -->
-     <% if @photos.present? %>
 
-       <% @photos.each_with_index do |p, index| %>
-         <% if index == 0 %>
-          <!-- <div class="product-box1"> -->
-           <%= image_tag p.avatar.medium.url %>
-           <div style="letter-spacing: -8px">
-         <% else %>
-           <%= image_tag p.avatar.thumb.url %>
-         <% end %>
-       <% end %>
-       </div>
-       <!-- </div> -->
-     <% else %>
-         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-     <% end %>
-     <!-- multi-pics -->
-
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @product.description %>
-      </p>
-    </div>
-    <div> 數量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ¥ <%= @product.price %> </div>
-    <div class="pull-right">
-      <% if @product.quantity > 0 %>
-        <%= link_to("加入購物車", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-primary btn-lg btn-danger") %>
-      <% else %>
-        已銷售一空，無法購買
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-            <div class="col-sm-12 ">
-                <h4>
-                  <%= @product.reviews.count %> Reviews
-                </h4>
-                <hr>
-              <div >
-                <%= render @product.reviews%>
-                <%= render "reviews/form"%>
-              </div>
+<div class="container-order">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1">
+                            <div class="productDetail">
+                                <div class="productDetail-left">
+                                    <div class="productDetail-left-bigImage">
+                                        <% if @product.photos[0].present? %>
+                                            <%= image_tag(@product.photos[0].avatar.medium.url) %>
+                                        <% else %>
+                                            <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+                                        <% end %>
+                                    </div>
+                                    <div class="productDetail-left-imageList">
+                                        <div class="productDetail-left-imageList-item">
+                                            <% if @product.photos[0].present? %>
+                                                <%= image_tag(@product.photos[0].avatar.medium.url ) %>
+                                            <% else %>
+                                                <%= image_tag("http://placehold.it/200x200&text=No Pic" ) %>
+                                            <% end %>
+                                        </div>
+                                        <div class="productDetail-left-imageList-item">
+                                            <% if @product.photos[1].present? %>
+                                                <%= image_tag(@product.photos[1].avatar.medium.url ) %>
+                                            <% else %>
+                                                <%= image_tag("http://placehold.it/200x200&text=No Pic" ) %>
+                                            <% end %>
+                                        </div>
+                                        <div class="productDetail-left-imageList-item">
+                                            <% if @product.photos[2].present? %>
+                                                <%= image_tag(@product.photos[2].avatar.medium.url ) %>
+                                            <% else %>
+                                                <%= image_tag("http://placehold.it/200x200&text=No Pic" ) %>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <!--<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>-->
+                        <li>
+                            <a data-target="#pic-2" data-toggle="tab"></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-3" data-toggle="tab"></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-4" data-toggle="tab"></a>
+                        </li>
+                        <li>
+                            <a data-target="#pic-5" data-toggle="tab"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">
+                        <%= @product.title %>
+                    </h3>
+                    <p class="product-description">
+                        <%= @product.description %>
+                    </p>
+                    <div>
+                        数量 :
+                           <%= @product.quantity %>
+                    </div>
+                    <h4 class="price">价格:
+                           <span>¥
+                               <%= @product.price %></span>
+                    </h4>
+                    <div class="action">
+                        <button class="add-to-cart btn btn-default" type="button">
+                            <% if @product.quantity.present? && @product.quantity > 0 %>
+                                <%= link_to("Add to cart", add_to_cart_product_path(@product), :method => :post) %>
+                            <% else %>
+                                已销售一空，无法购买
+                               <% end %>
+                        </button>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 </div>
+
+
+<div class="row">
+    <div class="col-sm-12 ">
+       <div class="reviews_title ">
+        <h4>
+            <%= @product.reviews.count %> Reviews
+                </h4>
+        <hr>
+        <div >
+            <%= render @product.reviews%>
+            <%= render "reviews/form"%>
+        </div>
+      </div>
+    </div>
+</div>
+
+<style >
+/*****************globals*************/
+                .container-order{
+                  margin-top: 60px;
+                    margin-left: 8em;
+                    margin-right: 8em;
+                    background-color: #fff;
+                      padding-bottom: 100px;
+                      border-radius: 16px;
+                      padding-top: 10px;
+                      border-style: solid;
+                      border-width: 1px;
+                      border-color: rgb(221, 221, 221);
+                }
+                .products_detail{
+                  width: 75em;
+                  margin-bottom: 4em;
+                  background-color: #fff4f4;
+                }
+
+                body {
+                    font-family: 'open sans';
+                    overflow-x: hidden;
+                  background-color: #fffcf4;
+                }
+                img {
+                    max-width: 400px;
+                }
+                .preview {
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                }
+                @media screen and (max-width: 996px) {
+                    .preview {
+                        margin-bottom: 20px;
+                    }
+                }
+                .preview-pic {
+                    -webkit-box-flex: 1;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                }
+                .preview-thumbnail.nav-tabs {
+                    border: none;
+                    margin-top: 15px;
+                }
+                .preview-thumbnail.nav-tabs li {
+                    width: 18%;
+                    margin-right: 2.5%;
+                }
+                .preview-thumbnail.nav-tabs li img {
+                    max-width: 100%;
+                    display: block;
+                }
+                .preview-thumbnail.nav-tabs li a {
+                    padding: 0;
+                    margin: 0;
+                }
+                .preview-thumbnail.nav-tabs li:last-of-type {
+                    margin-right: 0;
+                }
+                .tab-content {
+                    overflow: hidden;
+                }
+                .tab-content img {
+                    -webkit-animation-name: opacity;
+                    animation-name: opacity;
+                    -webkit-animation-duration: 0.3s;
+                    animation-duration: 0.3s;
+                }
+                .card {
+                    margin-top: 50px;
+                    padding: 3em;
+                    line-height: 1.5em;
+                }
+                @media screen and (min-width: 997px) {
+                    .wrapper {
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                    }
+                }
+
+                .colors {
+                    -webkit-box-flex: 1;
+                    -webkit-flex-grow: 1;
+                    -ms-flex-positive: 1;
+                    flex-grow: 1;
+                }
+                .colors,
+                .price,
+                .product-title {
+                    text-transform: UPPERCASE;
+                    font-weight: bold;
+                }
+                .checked,
+                .price span {
+                    color: #f65e65;
+                }
+                .price,
+                .product-description,
+                .product-title {
+                    margin-bottom: 15px;
+                }
+                .product-title {
+                    margin-top: 0;
+                }
+
+                .color {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    height: 2em;
+                    width: 2em;
+                    border-radius: 2px;
+                }
+                .color:first-of-type {
+                    margin-left: 20px;
+                }
+                .add-to-cart
+              {
+                    background: #f65e65;
+                    padding: 1.2em 1.5em;
+                    border: none;
+                    text-transform: UPPERCASE;
+                    font-weight: bold;
+                    margin-top: 20px;
+                    font-size:16px;
+                    color: #fff;
+                    -webkit-transition: background 0.3s ease;
+                    transition: background 0.3s ease;
+                    border-radius: 50px;
+                }
+                .add-to-cart:hover,
+               {
+                    background: #ff9f1a;
+                    color: #fff;
+                }
+                .not-available {
+                    text-align: center;
+                    line-height: 2em;
+                }
+                .not-available:before {
+                    font-family: fontawesome;
+                    content: "\f00d";
+                    color: #fff;
+                }
+                .tooltip-inner {
+                    padding: 1.3em;
+                }
+                @-webkit-keyframes opacity {
+                    0% {
+                        opacity: 0;
+                        -webkit-transform: scale(3);
+                        transform: scale(3);
+                    }
+                    100% {
+                        opacity: 1;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
+                }
+                @keyframes opacity {
+                    0% {
+                        opacity: 0;
+                        -webkit-transform: scale(3);
+                        transform: scale(3);
+                    }
+                    100% {
+                        opacity: 1;
+                        -webkit-transform: scale(1);
+                        transform: scale(1);
+                    }
+                }
+                .fl {
+                    float: left;
+                    display: inline;
+                }
+                /*商品信息*/
+                .productDetail {
+                    width: 1200px;
+                    margin: 20px auto;
+                    height: 518px;
+                }
+                .productDetail img {
+                    width: 100%;
+                    height: 100%;
+                }
+                .productDetail-left {
+                    float: left;
+                    /*你去左边*/
+                    width: 420px;
+                    height: 518px;
+                }
+                .productDetail-right {
+                    float: right;
+                    /*你去右边*/
+                    width: 744px;
+                    height: 518px;
+                }
+                .productDetail-left-bigImage {
+                    width: 400px;
+                    height: 400px;
+                    border: 1px solid #DDDDDD;
+                }
+                .productDetail-left-imageList {
+                    margin-top: 15px;
+                }
+                .productDetail-left-imageList-item {
+                    float: left;
+                    /*虽然我们是block元素，但是我们还是想在同一行呀，那就用float吧*/
+                    width: 110px;
+                    height: 110px;
+                    margin-right: 30px;
+                     border-style: 1px;
+                }
+                .productDetail-left-imageList-lastItem {
+                    margin-right: 0;
+                }
+                /*# sourceMappingURL=style.css.map */
+
+                .reviews_title{
+                  width: 800px; /*设置导航栏宽度1200*/
+                  margin: 0 auto; /*水平居中*/
+                }
+</style>
