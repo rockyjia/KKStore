@@ -1,0 +1,88 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fd2urdju75j30xc0dw0w3.jpg">
+            <div class="carousel-caption">
+                <h3>Intimate Gift for You</h3>
+            </div>
+        </div>
+        <!-- End Item -->
+        <div class="item">
+            <img  src="https://ooo.0o0.ooo/2017/02/25/58b186aee024c.jpg">
+            <div class="carousel-caption">
+                <h3>Delicate Gift for Your Parents</h3>
+            </div>
+        </div>
+        <!-- End Item -->
+        <div class="item">
+            <img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fd2uu4cr9ej30xc0dw7fe.jpg">
+            <div class="carousel-caption">
+                <h3>Interesting Gift for Your Kids</h3>
+            </div>
+        </div>
+        <!-- End Item -->
+        <div class="item">
+            <img  src="https://ooo.0o0.ooo/2017/02/25/58b186e5da108.jpg">
+            <div class="carousel-caption">
+                <h3>Unique Gift for Your Friends</h3>
+            </div>
+        </div>
+    </div>
+    <!-- End Item -->
+    <!-- End Carousel Inner -->
+    <ul class="nav nav-pills nav-justified">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">贴心的<small>Intimate and Sweet</small></a></li>
+        <li data-target="#myCarousel" data-slide-to="1"><a href="#">精致的<small>Delicate and Exquisite</small></a></li>
+        <li data-target="#myCarousel" data-slide-to="2"><a href="#">好玩的<small>Interesting and Amused</small></a></li>
+        <li data-target="#myCarousel" data-slide-to="3"><a href="#">独一无二的<small>Unique and Particular</small></a></li>
+    </ul>
+</div>
+<!-- End Carousel -->
+<!-- 紫色条 -->
+<div class="banner">
+    <ul class="banner-des text-center">
+        <li><img src="https://ooo.0o0.ooo/2017/02/15/58a3c2e206cb6.png" alt="" />直连一线制造</li>
+        <li><img src="https://ooo.0o0.ooo/2017/02/15/58a3c314cfe09.png" alt="" />7天无忧退换货</li>
+        <li><img src="https://ooo.0o0.ooo/2017/02/15/58a3c333036b7.png" alt="" />平台先行赔付</li>
+        <li><img src="https://ooo.0o0.ooo/2017/02/15/58a3c34eb223b.png" alt="" />全品类包邮</li>
+    </ul>
+</div>
+
+
+<div class="module-name decorative">
+    <i></i><span>精选商品</span><i></i>
+</div>
+
+
+<% Product.all.last(12).each do |product| %>
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <div  class="col-xs-6 col-sm-3" style="margin-top: 25px;">
+        <div class="cuadro_intro_hover " style="background-color:#cccccc;">
+            <p style="text-align:center; margin-top:0px;">
+                <%= link_to product_path(product) do  %>
+                    <% if product.photos.present? %>
+                        <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumb") %>
+                    <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumb") %>
+                    <% end %>
+                <% end %>
+            </p>
+
+            <div class="caption">
+                <div class="blur"></div>
+                <div class="caption-text">
+                    <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;"><%= link_to(product.title, product_path(product), class: "see btn",  :method => :get ) %></h3>
+                    <p><%= product.description%></p>
+                    <% if product.quantity.present? && product.quantity > 0 %>
+                        <%#= link_to(content_tag(:i, "", class: "fa fa-shopping-cart fa-4x"), add_to_cart_product_path(product), :method => :post) %>
+                        <%= link_to("加入购物车",add_to_cart_product_path(product), :method => :post, :class => "btn btn-default") %>
+                    <% else %>
+                        已售馨
+                 <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<% end %>
